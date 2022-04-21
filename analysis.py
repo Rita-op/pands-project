@@ -3,7 +3,7 @@
 
 # SECTION 1: Outputs a summary of each variable to a single text file
 
-# Imports all the modules used in the project:
+# Imports all the libraries used in the project:
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -11,17 +11,19 @@ import seaborn as sns
 
 # Reads the CSV file using pandas and sets the name of the columns:
 
-column_name = ['sepal_length','sepal_width','petal_length','petal_width','class']
-df = pd.read_csv('iris_data.csv', names = column_name) 
+column_name = ['sepal_length', 'sepal_width',
+               'petal_length', 'petal_width', 'class']
+df = pd.read_csv('iris_data.csv', names=column_name)
 
 # Creates a txt file called "variables_summary.txt" and writes a summary of each variable in it.
 # Also, it converts the Summary statistics of the Dataframe into a string in order to be able to save it into the file:
 
 filename = "variables_summary.txt"
-variables_summary = df.describe(include = 'all', percentiles = [0.05, 0.25, 0.75, 0.95]).to_string()
+
+variables_summary = df.describe(include='all', percentiles=[
+                                0.05, 0.25, 0.75, 0.95]).to_string()
 with open(filename, 'wt') as f:
     f.write(variables_summary)
-
 
 
 """
@@ -43,26 +45,32 @@ https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html
 # SECTION 2: Saves a histogram of each variable to png files
 
 # Creates four files with histograms by class for each quantitative variable (sepal length, sepal width, petal_length and petal_width):
-sepal_lenght_hist = df.hist(column ='sepal_length', by= 'class', bins = 15, xlabelsize=8, ylabelsize=8, xrot=360, color='green', edgecolor='black')
-plt.suptitle('Sepal Length Histograms by Class', fontsize= 12.0, fontweight= 'bold', y = 0.99)
+sepal_lenght_hist = df.hist(column='sepal_length', by='class', bins=15,
+                            xlabelsize=8, ylabelsize=8, xrot=360, color='green', edgecolor='black')
+plt.suptitle('Sepal Length Histograms by Class',
+             fontsize=12.0, fontweight='bold', y=0.99)
 plt.savefig("sepal_lenght_hist.png")
 
 
-sepal_width_hist = df.hist(column ='sepal_width', by= 'class', bins = 15, xlabelsize=8, ylabelsize=8, xrot=360, color='blue', edgecolor='black')
-plt.suptitle('Sepal Width Histograms by Class', fontsize= 12.0, fontweight= 'bold', y = 0.99)
+sepal_width_hist = df.hist(column='sepal_width', by='class', bins=15,
+                           xlabelsize=8, ylabelsize=8, xrot=360, color='blue', edgecolor='black')
+plt.suptitle('Sepal Width Histograms by Class',
+             fontsize=12.0, fontweight='bold', y=0.99)
 plt.savefig("sepal_width_hist.png")
 
 
-petal_lenght_hist = df.hist(column ='petal_length', by= 'class', bins = 15, xlabelsize=8, ylabelsize=8, xrot=360, color='yellow', edgecolor='black')
-plt.suptitle('Petal Length Histograms by Class', fontsize= 12.0, fontweight= 'bold', y = 0.99)
+petal_lenght_hist = df.hist(column='petal_length', by='class', bins=15,
+                            xlabelsize=8, ylabelsize=8, xrot=360, color='yellow', edgecolor='black')
+plt.suptitle('Petal Length Histograms by Class',
+             fontsize=12.0, fontweight='bold', y=0.99)
 plt.savefig("petal_lenght_hist.png")
 
 
-petal_width_hist = df.hist(column ='petal_width', by= 'class', bins = 15, xlabelsize=8, ylabelsize=8, xrot=360, color='orange', edgecolor='black')
-plt.suptitle('Petal Width Histograms by Class', fontsize= 12.0, fontweight= 'bold', y = 0.99)
+petal_width_hist = df.hist(column='petal_width', by='class', bins=15,
+                           xlabelsize=8, ylabelsize=8, xrot=360, color='orange', edgecolor='black')
+plt.suptitle('Petal Width Histograms by Class',
+             fontsize=12.0, fontweight='bold', y=0.99)
 plt.savefig("petal_width_hist.png")
-
-
 
 
 """
@@ -84,16 +92,15 @@ https://matplotlib.org/stable/gallery/text_labels_and_annotations/titles_demo.ht
 """
 
 
-# SECTION 3: Outputs a scatter plot of each pair of variables
+# SECTION 3: Outputs a scatter plot of each pair of variables to a png file
 
-# It has been used the Seaborn library in order to perform this analysis. The result is saved to a png file. 
+# It has been used the Seaborn library in order to perform this analysis. The result is saved to a png file.
 sns.set_style("whitegrid")
 sns.set_palette(["g", "m", "c"])
-scattter_plots = sns.pairplot(df, hue = 'class')
-plt.suptitle('Pair Plot of Each Pair of Quantitative Variables', fontsize = 12.0, fontweight = 'bold', y = 1)
+scattter_plots = sns.pairplot(df, hue='class')
+plt.suptitle('Pair Plot of Each Pair of Quantitative Variables',
+             fontsize=12.0, fontweight='bold', y=1)
 plt.savefig("scatter_plots.png")
-
-
 
 
 """
@@ -115,9 +122,38 @@ https://wellsr.com/python/seaborn-scatter-plot-with-sns-scatterplot/
 
 # SECTION 4: Additional analysis that I think is appropriate for this case
 
+# SECTION 4.1: Correlation between variables
+
+# Creates a txt file called "variables_correlation.txt" and writes a correlation table of each variable in it.
+# Also, it converts the correlation table into a string in order to be able to save it into the file.
+
+filename = "variables_correlation.txt"
+
+variables_correlation = df.corr().to_string()
+with open(filename, 'wt') as f:
+    f.write(variables_correlation)
 
 
 
 
 
 
+
+
+
+
+
+
+"""
+
+REFERENCES:
+https://www.adamsmith.haus/python/answers/how-to-find-the-correlation-between-two-pandas-dataframe-columns-in-python
+https://github.com/andrewbeattycourseware/pands2022/blob/main/jupyternotebooks/Topic07%20files.ipynb
+https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html
+https://scikit-learn.org/stable/modules/clustering.html#k-means
+
+
+
+
+
+"""
