@@ -3,9 +3,10 @@
 
 # SECTION 1: Outputs a summary of each variable to a single text file
 
-# Imports all the modules used in the project
+# Imports all the modules used in the project:
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 # Reads the CSV file using pandas and sets the name of the columns:
@@ -41,24 +42,24 @@ https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html
 
 # SECTION 2: Saves a histogram of each variable to png files
 
-
-sepal_lenght_hist = df.hist(column ='sepal_length', by= 'class',bins = 15, xlabelsize=8, ylabelsize=8, xrot=360, color='green', edgecolor='black')
-plt.suptitle('Sepal Length Histograms by Class', fontsize= 15.0, fontweight= "bold")
+# Creates four files with histograms by class for each quantitative variable (sepal length, sepal width, petal_length and petal_width):
+sepal_lenght_hist = df.hist(column ='sepal_length', by= 'class', bins = 15, xlabelsize=8, ylabelsize=8, xrot=360, color='green', edgecolor='black')
+plt.suptitle('Sepal Length Histograms by Class', fontsize= 12.0, fontweight= 'bold', y = 0.99)
 plt.savefig("sepal_lenght_hist.png")
 
 
-sepal_width_hist = df.hist(column ='sepal_width', by= 'class',bins = 15, xlabelsize=8, ylabelsize=8, xrot=360, color='blue', edgecolor='black')
-plt.suptitle('Sepal Width Histograms by Class', fontsize= 15.0, fontweight= "bold")
+sepal_width_hist = df.hist(column ='sepal_width', by= 'class', bins = 15, xlabelsize=8, ylabelsize=8, xrot=360, color='blue', edgecolor='black')
+plt.suptitle('Sepal Width Histograms by Class', fontsize= 12.0, fontweight= 'bold', y = 0.99)
 plt.savefig("sepal_width_hist.png")
 
 
-petal_lenght_hist = df.hist(column ='petal_length', by= 'class',bins = 15, xlabelsize=8, ylabelsize=8, xrot=360, color='yellow', edgecolor='black')
-plt.suptitle('Petal Length Histograms by Class', fontsize= 15.0, fontweight= "bold")
+petal_lenght_hist = df.hist(column ='petal_length', by= 'class', bins = 15, xlabelsize=8, ylabelsize=8, xrot=360, color='yellow', edgecolor='black')
+plt.suptitle('Petal Length Histograms by Class', fontsize= 12.0, fontweight= 'bold', y = 0.99)
 plt.savefig("petal_lenght_hist.png")
 
 
-petal_width_hist = df.hist(column ='petal_width', by= 'class',bins = 15, xlabelsize=8, ylabelsize=8, xrot=360, color='orange', edgecolor='black')
-plt.suptitle('Petal Width Histograms by Class', fontsize= 15.0, fontweight= "bold")
+petal_width_hist = df.hist(column ='petal_width', by= 'class', bins = 15, xlabelsize=8, ylabelsize=8, xrot=360, color='orange', edgecolor='black')
+plt.suptitle('Petal Width Histograms by Class', fontsize= 12.0, fontweight= 'bold', y = 0.99)
 plt.savefig("petal_width_hist.png")
 
 
@@ -76,6 +77,7 @@ https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html
 https://stackoverflow.com/questions/19614400/add-title-to-collection-of-pandas-hist-plots
 https://www.includehelp.com/python/bold-text-label-in-plot.aspx
 https://www.oreilly.com/library/view/python-data-science/9781491912126/ch04.html
+https://matplotlib.org/stable/gallery/text_labels_and_annotations/titles_demo.html
 
 
 
@@ -83,6 +85,32 @@ https://www.oreilly.com/library/view/python-data-science/9781491912126/ch04.html
 
 
 # SECTION 3: Outputs a scatter plot of each pair of variables
+
+# It has been used the Seaborn library in order to perform this analysis. The result is saved to a png file. 
+sns.set_style("whitegrid")
+sns.set_palette(["g", "m", "c"])
+scattter_plots = sns.pairplot(df, hue = 'class')
+plt.suptitle('Pair Plot of Each Pair of Quantitative Variables', fontsize = 12.0, fontweight = 'bold', y = 1)
+plt.savefig("scatter_plots.png")
+
+
+
+
+"""
+
+REFERENCES:
+https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166
+https://www.tutorialspoint.com/increase-the-distance-between-the-title-and-the-plot-in-matplotlib
+https://seaborn.pydata.org/generated/seaborn.pairplot.html
+https://seaborn.pydata.org/generated/seaborn.set_style.html
+https://goodboychan.github.io/python/datacamp/visualization/2020/06/27/01-Customizing-Seaborn-Plots.html
+https://wellsr.com/python/seaborn-scatter-plot-with-sns-scatterplot/
+
+
+
+
+
+"""
 
 
 # SECTION 4: Additional analysis that I think is appropriate for this case
