@@ -50,28 +50,28 @@ sepal_lenght_hist = df.hist(column='sepal_length', by='class', bins=15,
 plt.suptitle('Sepal Length Histograms by Class',
              fontsize=12.0, fontweight='bold', y=0.99)
 plt.savefig("sepal_lenght_hist.png")
-
+plt.close()
 
 sepal_width_hist = df.hist(column='sepal_width', by='class', bins=15,
                            xlabelsize=8, ylabelsize=8, xrot=360, color='blue', edgecolor='black')
 plt.suptitle('Sepal Width Histograms by Class',
              fontsize=12.0, fontweight='bold', y=0.99)
 plt.savefig("sepal_width_hist.png")
-
+plt.close()
 
 petal_lenght_hist = df.hist(column='petal_length', by='class', bins=15,
                             xlabelsize=8, ylabelsize=8, xrot=360, color='yellow', edgecolor='black')
 plt.suptitle('Petal Length Histograms by Class',
              fontsize=12.0, fontweight='bold', y=0.99)
 plt.savefig("petal_lenght_hist.png")
-
+plt.close()
 
 petal_width_hist = df.hist(column='petal_width', by='class', bins=15,
                            xlabelsize=8, ylabelsize=8, xrot=360, color='orange', edgecolor='black')
 plt.suptitle('Petal Width Histograms by Class',
              fontsize=12.0, fontweight='bold', y=0.99)
 plt.savefig("petal_width_hist.png")
-
+plt.close()
 
 """
 
@@ -95,13 +95,14 @@ https://matplotlib.org/stable/gallery/text_labels_and_annotations/titles_demo.ht
 # SECTION 3: Outputs a scatter plot of each pair of variables to a png file
 
 # It has been used the Seaborn library in order to perform this analysis. The result is saved to a png file.
+
 sns.set_style("whitegrid")
 sns.set_palette(["g", "m", "c"])
 scattter_plots = sns.pairplot(df, hue='class')
 plt.suptitle('Pair Plot of Each Pair of Quantitative Variables',
              fontsize=12.0, fontweight='bold', y=1)
 plt.savefig("scatter_plots.png")
-
+plt.close()
 
 """
 
@@ -112,6 +113,7 @@ https://seaborn.pydata.org/generated/seaborn.pairplot.html
 https://seaborn.pydata.org/generated/seaborn.set_style.html
 https://goodboychan.github.io/python/datacamp/visualization/2020/06/27/01-Customizing-Seaborn-Plots.html
 https://wellsr.com/python/seaborn-scatter-plot-with-sns-scatterplot/
+https://stackoverflow.com/questions/37734512/savefig-loop-adds-previous-plots-to-figure?fbclid=IwAR101W3aPSKbrgkL3Yu7aDcehCFMBPVBF055xb1iNDqQE-AuM0Mjn4ArKaE
 
 
 
@@ -134,14 +136,32 @@ with open(filename, 'wt') as f:
     f.write(variables_correlation)
 
 
+# Creates a correlation heatmap using seaborn library:
+heatmap_correlation = sns.heatmap(
+    df.corr(), vmin=-1, vmax=1, annot=True, linecolor='white', linewidth=1, cmap='GnBu')
+heatmap_correlation.set_title(
+    'Correlation Heatmap', fontsize=12.0, fontweight='bold')
+plt.savefig("correlation_heatmap.png")
+plt.close()
 
 
+# SECTION 4.2: Box plots
 
 
+# Sets seaborn plotting aesthetics as default
+sns.set()
 
+# Defines plotting region (2 rows, 2 columns)
+fig, axes = plt.subplots(2, 2)
+plt.gcf().set_size_inches(20, 10)
+# Creates boxplot in each subplot for the four quantitative variables by class:
 
-
-
+sns.boxplot(data=df, x='class', y='sepal_length', ax=axes[0, 0])
+sns.boxplot(data=df, x='class', y='sepal_width', ax=axes[0, 1])
+sns.boxplot(data=df, x='class', y='petal_length', ax=axes[1, 0])
+sns.boxplot(data=df, x='class', y='petal_width', ax=axes[1, 1])
+plt.savefig("box_plots.png")
+plt.close()
 
 
 """
@@ -149,10 +169,13 @@ with open(filename, 'wt') as f:
 REFERENCES:
 https://www.adamsmith.haus/python/answers/how-to-find-the-correlation-between-two-pandas-dataframe-columns-in-python
 https://github.com/andrewbeattycourseware/pands2022/blob/main/jupyternotebooks/Topic07%20files.ipynb
-https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html
-https://scikit-learn.org/stable/modules/clustering.html#k-means
-
-
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.boxplot.html
+https://nickmccullum.com/python-visualization/boxplot/
+https://matplotlib.org/stable/tutorials/colors/colormaps.html
+https://seaborn.pydata.org/generated/seaborn.heatmap.html
+https://towardsdatascience.com/heatmap-basics-with-pythons-seaborn-fb92ea280a6c
+https://www.statology.org/seaborn-subplots/ 
+https://stackoverflow.com/questions/52274643/figsize-in-matplotlib-is-not-changing-the-figure-size
 
 
 
