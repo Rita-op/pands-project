@@ -164,6 +164,19 @@ plt.savefig("box_plots.png")
 plt.close()
 
 
+# SECTION 4.3: Variables Summary Group by Class
+
+filename = 'variables_summary_by_class.txt'
+variables_summary_by_class = df.groupby(['class']).describe(percentiles=[
+    0.05, 0.25, 0.75, 0.95]).transpose().to_string()
+
+with open(filename, 'wt') as f:
+    f.write(variables_summary_by_class)
+
+
+
+
+
 """
 
 REFERENCES:
@@ -176,6 +189,8 @@ https://seaborn.pydata.org/generated/seaborn.heatmap.html
 https://towardsdatascience.com/heatmap-basics-with-pythons-seaborn-fb92ea280a6c
 https://www.statology.org/seaborn-subplots/ 
 https://stackoverflow.com/questions/52274643/figsize-in-matplotlib-is-not-changing-the-figure-size
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.transpose.html
 
 
 
