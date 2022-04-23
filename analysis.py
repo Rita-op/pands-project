@@ -15,6 +15,14 @@ column_name = ['sepal_length', 'sepal_width',
                'petal_length', 'petal_width', 'class']
 df = pd.read_csv('iris_data.csv', names=column_name)
 
+
+# Prints out information about the dataset:
+print(df.info())
+
+
+# Prints out the first 10 rows of the dataset:
+print(df.head(10))
+
 # Creates a txt file called "variables_summary.txt" and writes a summary of each variable in it.
 # Also, it converts the Summary statistics of the Dataframe into a string in order to be able to save it into the file:
 
@@ -37,12 +45,23 @@ https://www.sharpsightlabs.com/blog/pandas-describe/
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html
 https://github.com/andrewbeattycourseware/pands2022/blob/main/jupyternotebooks/Topic07%20files.ipynb
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html
+https://www.w3schools.com/python/pandas/ref_df_info.asp#:~:text=The%20info()%20method%20prints,method%20actually%20prints%20the%20info. 
+https://www.w3resource.com/pandas/dataframe/dataframe-head.php
 
 
 """
 
 
 # SECTION 2: Saves a histogram of each variable to png files
+
+
+# Histogram of each qualitative variable
+variables_histogram = df.hist(bins=15, color='blue', edgecolor='black', grid = False, xlabelsize=8, ylabelsize=8)
+plt.suptitle('Variables Histogram',
+             fontsize=12.0, fontweight='bold', y=0.99)
+plt.savefig("variables_histogram.png")
+plt.close()
+
 
 # Creates four files with histograms by class for each quantitative variable (sepal length, sepal width, petal_length and petal_width):
 sepal_lenght_hist = df.hist(column='sepal_length', by='class', bins=15,
@@ -53,7 +72,7 @@ plt.savefig("sepal_lenght_hist.png")
 plt.close()
 
 sepal_width_hist = df.hist(column='sepal_width', by='class', bins=15,
-                           xlabelsize=8, ylabelsize=8, xrot=360, color='blue', edgecolor='black')
+                           xlabelsize=8, ylabelsize=8, xrot=360, color='pink', edgecolor='black')
 plt.suptitle('Sepal Width Histograms by Class',
              fontsize=12.0, fontweight='bold', y=0.99)
 plt.savefig("sepal_width_hist.png")
@@ -149,7 +168,7 @@ plt.close()
 
 
 # Sets seaborn plotting aesthetics as default
-sns.set()
+sns.set(style='ticks', palette= 'colorblind')
 
 # Defines plotting region (2 rows, 2 columns)
 fig, axes = plt.subplots(2, 2)
@@ -174,6 +193,44 @@ with open(filename, 'wt') as f:
     f.write(variables_summary_by_class)
 
 
+# SECTION 4.4:
+
+class_barplot = sns.countplot(x='class', data=df )
+plt.savefig("class_barplot.png")
+plt.close()
+
+
+# SECTION 4.5: Variables Correlation Heatmap Group by Class
+
+sns.set(style='ticks')
+
+#  Defines plotting region (2 rows, 2 columns)
+fig, axes = plt.subplots(2, 2)
+plt.gcf().set_size_inches(20, 10)
+
+df_groupby_class = df.groupby(['class'])
+
+iris_virginica_heatmap_axes = axes[0, 0]
+iris_virginica_heatmap_axes.set(title="Correlation Heatmap for Iris Virginica")
+
+iris_setosa_heatmap_axes = axes[0, 1]
+iris_setosa_heatmap_axes.set(title="Correlation Heatmap for Iris Setosa")
+
+iris_versicolor_heatmap_axes = axes[1, 0]
+iris_versicolor_heatmap_axes.set(title="Correlation Heatmap for Iris Versicolor")
+
+sns.heatmap(df_groupby_class.get_group('Iris-virginica').corr(), vmin=-1, vmax=1, annot=True,
+            linecolor='white', linewidth=1, cmap='GnBu', ax=iris_virginica_heatmap_axes)
+sns.heatmap(df_groupby_class.get_group('Iris-setosa').corr(), vmin=-1, vmax=1, annot=True,
+            linecolor='white', linewidth=1, cmap='GnBu', ax=iris_setosa_heatmap_axes)
+sns.heatmap(df_groupby_class.get_group('Iris-versicolor').corr(), vmin=-1, vmax=1, annot=True,
+            linecolor='white', linewidth=1, cmap='GnBu', ax=iris_versicolor_heatmap_axes)
+axes[1, 1].axis('off')
+
+plt.savefig("heatmap_by_class.png")
+plt.close()
+
+
 
 
 
@@ -191,6 +248,13 @@ https://www.statology.org/seaborn-subplots/
 https://stackoverflow.com/questions/52274643/figsize-in-matplotlib-is-not-changing-the-figure-size
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.transpose.html
+https://towardsdatascience.com/matplotlib-seaborn-basics-2bd7b66dbee2
+https://s3.amazonaws.com/assets.datacamp.com/production/course_6919/slides/chapter2.pdf
+https://seaborn.pydata.org/tutorial/color_palettes.html
+https://seaborn.pydata.org/generated/seaborn.countplot.html
+https://stackoverflow.com/questions/10035446/how-can-i-make-a-blank-subplot-in-matplotlib
+https://stackoverflow.com/questions/32723798/how-do-i-add-a-title-and-axis-labels-to-seaborn-heatmap
+https://stackoverflow.com/questions/14734533/how-to-access-pandas-groupby-dataframe-by-key
 
 
 
