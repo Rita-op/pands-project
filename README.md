@@ -32,6 +32,25 @@ The dataset has been added to the repository in a CSV file called "iris-data.csv
 
 
 
+## Images
+
+<img src="images/iris_flowers.jpeg" alt="iris_flowers" width="800">
+<img src="images/dataframe_info.png" alt=dataframe_info width="300">
+<img src="images/dataset_first_10_rows.png" alt=dataframe_info width="500">
+<img src="images/box_plots.png" alt="box_plots" width="750">
+<img src="images/class_barplot.png" alt="class_barplot" width="400">
+<img src="images/correlation_heatmap.png" alt="correlation_heatmap" width="400">
+<img src="images/heatmap_by_class.png" alt="heatmap_by_class" width="750">
+<img src="images/petal_lenght_hist.png" alt="petal_lenght_hist" width="400">
+<img src="images/petal_width_hist.png" alt="petal_width_hist" width="400">
+<img src="images/scatter_plots.png" alt="scatter_plots" width="750">
+<img src="images/sepal_lenght_hist.png" alt="sepal_lenght_hist" width="400">
+<img src="images/sepal_width_hist.png" alt="sepal_width_hist" width="400">
+<img src="images/variables_histogram.png" alt="variables_histogram" width="400">
+<img src="images/variables_summary_by_class.png" alt="variables_summary_by_class" width="400">
+<img src="images/variables_correlation.png" alt="variables_correlation" width="400">
+<img src="images/variables_summary.png" alt="variables_summary" width="400">
+
 
 
 
@@ -92,5 +111,7 @@ https://seaborn.pydata.org/generated/seaborn.countplot.html
 https://stackoverflow.com/questions/10035446/how-can-i-make-a-blank-subplot-in-matplotlib
 https://stackoverflow.com/questions/32723798/how-do-i-add-a-title-and-axis-labels-to-seaborn-heatmap
 https://stackoverflow.com/questions/14734533/how-to-access-pandas-groupby-dataframe-by-key
+https://gist.github.com/MichaelPolla/a65ac84286ab523603e64549f9850223
+https://www.w3schools.com/tags/tag_img.asp
 
 
