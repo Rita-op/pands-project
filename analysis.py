@@ -14,7 +14,7 @@ column_name = ['sepal_length', 'sepal_width',
 df = pd.read_csv('iris_data.csv', names=column_name)
 
 
-# SECTION 1: Analysis Per Variable 
+# SECTION 1: Analysis Per Variable
 
 # SECTION 1.1: Brief Description of The Dataset
 
@@ -38,9 +38,10 @@ with open(filename, 'wt') as f:
     f.write(variables_summary)
 
 
-# SECTION 1.3: Histogram of Each Quantitative Variable 
+# SECTION 1.3: Histogram of Each Quantitative Variable
 
-variables_histogram = df.hist(bins=15, color='blue', edgecolor='black', grid = False, xlabelsize=8, ylabelsize=8)
+variables_histogram = df.hist(
+    bins=15, color='blue', edgecolor='black', grid=False, xlabelsize=8, ylabelsize=8)
 plt.suptitle('Variables Histogram',
              fontsize=12.0, fontweight='bold', y=0.99)
 plt.savefig("variables_histogram.png")
@@ -49,7 +50,7 @@ plt.close()
 
 # SECTION 1.4: Bar Plot for The Variable "Class"
 
-class_barplot = sns.countplot(x='class', data=df )
+class_barplot = sns.countplot(x='class', data=df)
 plt.savefig("class_barplot.png")
 plt.close()
 
@@ -136,7 +137,7 @@ plt.close()
 # SECTION 2.4: Box Plot of Each Quantitative Variable Grouped by Iris Species
 
 # Sets seaborn plotting aesthetics as default
-sns.set(style='ticks', palette= 'colorblind')
+sns.set(style='ticks', palette='colorblind')
 
 # Defines plotting region (2 rows, 2 columns)
 fig, axes = plt.subplots(2, 2)
@@ -169,7 +170,8 @@ iris_setosa_heatmap_axes = axes[0, 1]
 iris_setosa_heatmap_axes.set(title="Correlation Heatmap for Iris Setosa")
 
 iris_versicolor_heatmap_axes = axes[1, 0]
-iris_versicolor_heatmap_axes.set(title="Correlation Heatmap for Iris Versicolor")
+iris_versicolor_heatmap_axes.set(
+    title="Correlation Heatmap for Iris Versicolor")
 
 sns.heatmap(df_groupby_class.get_group('Iris-virginica').corr(), vmin=-1, vmax=1, annot=True,
             linecolor='white', linewidth=1, cmap='GnBu', ax=iris_virginica_heatmap_axes)
@@ -181,6 +183,3 @@ axes[1, 1].axis('off')
 
 plt.savefig("heatmap_by_class.png")
 plt.close()
-
-
-

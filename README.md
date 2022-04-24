@@ -1,13 +1,48 @@
 # pands-project
 
-## This repository contains the solution to the project of the module: " Programming and Scripting"
+ This repository contains the solution to the project of the module: " Programming and Scripting" for the Higher Diploma in Computing in Data Analytics.
+***
 
------------
+## Introduction 
 
-Database: http://archive.ics.uci.edu/ml/datasets/Iris 
+## About this Repository
+
+## The Dataset
+
+The objective of this project is about performing several analyses on the well-known Fisher’s Iris dataset. According to [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/datasets/Iris) and [Wikipedia](https://en.wikipedia.org/wiki/Iris_flower_data_set), this dataset quantifies the morphotic variation of 50 records for each of three Iris species:  Iris Setosa, Iris Virginica, and Iris Versicolor. Thus, the dataset is made of 150 samples which quantify the width and height of both the sepal and petal of each flower measured in centimetres. Thereby, The Fisher’s Iris dataset is composed of the following attributes: 
+1. sepal length in cm
+2. sepal width in cm
+3. petal length in cm
+4. petal width in cm
+5. class:  Iris Setosa, Iris Virginica, and Iris Versicolor
+
+
+      (IMAGE)
+
+
+The dataset is named after a British statistician and biologist called Ronald Fisher, who introduced it in his 1936 paper about linear discriminant analysis called "The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis". I would like to point out that this dataset is so popular that it has been used since its creation as a test case throughout the data analytics field, such as machine learning and data mining. 
+
+The dataset has been added to the repository in a CSV file called "iris-data.csv", which has been downloaded from The UCI Machine Learning Repository website [link here](http://archive.ics.uci.edu/ml/machine-learning-databases/iris/). 
+***
+
+## Exploratory Data Analysis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 How to format source code in Visual Studio: https://mkyong.com/vscode/how-to-format-source-code-in-visual-studio-code-vscode/   
-
 
 
 
