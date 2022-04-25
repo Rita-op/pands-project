@@ -19,7 +19,7 @@ df = pd.read_csv('iris_data.csv', names=column_name)
 # SECTION 1.1: Brief Description of The Dataset
 
 # Prints out a brief information about the dataset:
-print(df.info())
+df.info()
 
 # Prints out the first 10 rows of the dataset:
 print(df.head(10))
