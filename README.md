@@ -87,7 +87,7 @@ In this subsection, I have used a bar chart to compare the samples of each iris 
 
 Analysing the bar plot, we can see that the dataset is well balanced since there are 50 samples of each species ([Kumar, 2022](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/#:~:text=Iris%20Dataset%20is%20considered%20as,flowers%20and%20recorded%20them%20digitally))
 
-#### 3.1.5. Correlation Between Variables
+### 3.1.5. Correlation Between Variables
 To finish with the analysis of this first section, in which I have been carrying out an analysis per variable, I am going to study the correlation between variables. The correlation is a statistical measure that shows if two variables are related. It takes values between -1 and 1 to show the level of correlation between variables ([McLeod, 2020](https://www.simplypsychology.org/correlation.html)).
 
 In the table below, we can see that the variables petal length and petal width have a high positive correlation (0.96). Also, we can see that the petal length and the sepal length have a good positive correlation(0.87). 
@@ -111,38 +111,69 @@ We start the exploratory analysis of this new section with a statistical summary
 <img src="images/variables_summary_by_class.png" alt="variables_summary_by_class" width="400">
 
 From the previous table we can get the following insights:
-* On average, the Iris Versicolor and the Iris Virginica are the most similar in measurements. That is, these two types of Iris species are the most similar to each other.
+* The Iris Versicolor and the Iris Virginica are the most similar in measurements. That is, these two types of Iris species are the most similar to each other.
 * The standard deviation shows that there is more variability in the Iris Virginia specie measurements than in the other ones.
 * The maximum value in the sample is reached by the Iris Virginica with 7.9 cm of sepal length and the minimum is reached by the Iris Setosa with 0.1 cm of petal width.
 
 ### 3.2.2. Histogram of Each Quantitative Variable Grouped by Iris Species
+To continue the analysis, I have made a histogram for each quantitative variable (sepal length, sepal width, petal length and petal width) broken down by iris species. Thus, we can analyze the differences in frequency distribution among iris species per attribute. I have decided to represent each feature in a different colour in order to make them more readable and understandable. 
 
+Without further ado, I will present the insights obtained in this subsection of the analysis.
+
+First of all, it is exposed the histograms for the variable sepal length.  We can see that the Iris Setosa present less variability in this measurement than the other two species. In addition, the histograms show that the Iris Virginica's sepal length measurements are greater in most of the samples than in the rest of the iris species. On the other hand, the Iris Setosa has more samples with the sepal length smaller than the rest of the species. 
 
 <img src="images/sepal_lenght_hist.png" alt="sepal_lenght_hist" width="400">
+
+Regarding the sepal width, the Iris Setosa is the one that reaches higher values in this attribute. Also, we can see that the vast majority of the samples are concentrated in values that oscillate between 2.5 and 3.5 centimetres.
+
 <img src="images/sepal_width_hist.png" alt="sepal_width_hist" width="400">
+
+The next histograms show the results for the variable petal length. In this case, we can see that the samples of the Iris Virginica's petal length measurements are greater in most of the samples than in the two other species. Moreover, the differences in this variable among iris species are more differentiated than in the rest of the variables. I would like to highlight that the Iris Setosa's histogram almost follows a normal distribution ([Sideroba, 2019](https://getnave.com/blog/histogram-diagram/)).
+
 <img src="images/petal_lenght_hist.png" alt="petal_lenght_hist" width="400">
+
+Finally, we have the histograms of the variable petal width. In the case of this variable, we can see that for the Iris Setosa most of the samples has around 0.2 cm. On the other hand, the other two species have greater variability of sizes. I would like to point out that the Iris Virginica is the specie with the greatest sepals width in the sample. 
+
 <img src="images/petal_width_hist.png" alt="petal_width_hist" width="400">
 
+The previous histograms illustrate how the frequency distributions present great differences between each iris species. 
+
 ###  3.2.3. Scatter Plot of Each Pair of Variables
+At this stage in the analysis, I found it interesting to use scatter plots to determine if there are patterns or correlations between each pair of variables ([West, 2020](https://visme.co/blog/scatter-plot/)).
+
+In order to do that, I have made use of Seaborn's function `pairplot()` , which is very useful to scatter plot all variables at once in a single figure. This function allows us to see both distributions of single variables and relationships between two variables. It is built on two basic figures, the histogram and the scatter plot. The histogram on the diagonal allows us to see the distribution of a single variable while the scatter plots on the upper and lower triangles show the relationship (or lack thereof) between two variables ([Koehrsen, 2018](https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166)). I would like to point out that each iris species has been assigned a colour with the aim of being able to make the comparison according to the iris species.
 
 <img src="images/scatter_plots.png" alt="scatter_plots" width="750">
 
+As per the previous plot ([InDeepData, 2021](https://indeepdata.com/blog/exploratory-data-analysis/)), we can see that the Iris Setosa seems to be clearly differentiated from the other two iris species. These other two iris species (Iris Versicolor and Iris Virginica)
+even tend to overlap with each other. However, the plots illustrated that the Iris Virginica usually has longer and wider petals than the Iris Versicolor.  
+
 ###  3.2.4. Box Plot of Each Quantitative Variable Grouped by Iris Species
+Following the analysis, I have made use of a box plot per variable grouped by iris species. This type of visualization displays different useful information about a dataset ([Galarnyk, 2018](https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51)): 
+* The distribution of the data based on a five-number summary (minimum value, first quartile, median, third quartile and maximum value).
+* The presence or lack of outliers.
+* It can also tell you if the data is symmetrical and how the data is skewed.
 
 <img src="images/box_plots.png" alt="box_plots" width="750">
 
+From the above plot, we can see that Iris Setosa is the specie with the presence of more outliers. In addition, for most of the attributes the Iris Setosa is the specie less distributed and with smaller measures except for the variable sepal width. Another aspect to highlight is that most of the maximum values are reached for the Iris Virginica ([Sarma, 2021](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda)). 
 
 ###  3.2.5. Correlation Between Variables Grouped by Iris Species
+I finish the study by analysing the correlation between variables grouped by iris species. In order to do that, I have used a heatmap visualization, since this is an easy way to show the correlation. In the next figure, we can find a heatmap for each of the iris species.
 
 <img src="images/heatmap_by_class.png" alt="heatmap_by_class" width="750">
 
+The previous heatmaps show that the higher correlation is reached by the Iris Virginica (0.86) between the variables sepal length and petal length. On the other hand, the lowest correlation corresponds to the Iris Setosa (0.18) for the variables petal length and sepal width.
+
+In an overview, the Iris Versicolor is the specie with the greatest correlation between the variables and the Iris Setosa is the one that presents variables with the lowest correlation coefficient between them.
 
 # 4. Conclusions
-
-
-
-
-
+We have reached the last section of this analysis, where the conclusions will be exposed. Throughout the exploratory data analysis performed many interesting insights have been obtained about the famous Fisher’s Iris dataset. In the following lines, I will present the insights that I found more relevant: 
+* The sepal and petal are usually longer than they are wide. Also, the sepals are on average bigger than the petals.
+* We have a well-balanced dataset since there are 50 samples of each iris species.
+* The Iris Versicolor and the Iris Virginica are the most similar in measurements. That is, these two types of Iris species are the most similar to each other. On the other hand, the Iris Setosa seems to be clearly differentiated from the other two iris species.
+* The standard deviation shows that there is more variability in the Iris Virginia specie measurements than in the other ones.
+* The Iris Versicolor is the specie with the greatest correlation between the variables and the Iris Setosa is the one that presents variables with the lowest correlation coefficient between them.
 
 # 5. References
 
@@ -192,5 +223,13 @@ https://stackoverflow.com/questions/32723798/how-do-i-add-a-title-and-axis-label
 https://stackoverflow.com/questions/14734533/how-to-access-pandas-groupby-dataframe-by-key
 https://gist.github.com/MichaelPolla/a65ac84286ab523603e64549f9850223
 https://www.w3schools.com/tags/tag_img.asp
+https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda 
+https://columbiacollege-ca.libguides.com/c.php?g=713274&p=5082934
+https://www.kaggle.com/code/rakesh6184/seaborn-plot-to-visualize-iris-data/notebook
+https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/#:~:text=Iris%20Dataset%20is%20considered%20as,flowers%20and%20recorded%20them%20digitally
+https://visme.co/blog/scatter-plot/
+https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166
+https://dsstream.com/data-exploration-definition-and-techniques/
+https://getnave.com/blog/histogram-diagram/
 
 
