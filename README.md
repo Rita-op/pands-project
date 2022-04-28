@@ -176,60 +176,106 @@ We have reached the last section of this analysis, where the conclusions will be
 * The Iris Versicolor is the specie with the greatest correlation between the variables and the Iris Setosa is the one that presents variables with the lowest correlation coefficient between them.
 
 # 5. References
+Code Grepper. (2021, April 05). *Pandas Read Csv Without Index Code Example*. [online] Available at: <https://www.codegrepper.com/code-examples/python/pandas+read+csv+without+index>
 
-https://www.codegrepper.com/code-examples/python/pandas+read+csv+without+index
-https://pandas.pydata.org/docs/user_guide/io.html#io-read-csv-table
-https://www.adamsmith.haus/python/answers/how-to-set-column-names-when-importing-a-csv-into-a-pandas-dataframe-in-python#:~:text=Call%20pandas.,order%20they%20appear%20in%20names%20.
-https://www.sharpsightlabs.com/blog/pandas-describe/
-https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html
-https://github.com/andrewbeattycourseware/pands2022/blob/main/jupyternotebooks/Topic07%20files.ipynb
-https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html
-https://www.w3schools.com/python/pandas/ref_df_info.asp#:~:text=The%20info()%20method%20prints,method%20actually%20prints%20the%20info. 
-https://www.w3resource.com/pandas/dataframe/dataframe-head.php
-https://moonbooks.org/Articles/How-to-create-an-histogram-from-a-dataframe-using-pandas-in-python-/
-https://stackoverflow.com/questions/31596084/save-dataframe-hist-to-a-file
-https://www.marsja.se/how-to-plot-a-histogram-with-pandas-in-3-simple-steps/
-https://www.machinelearningplus.com/pandas/pandas-histogram/
-https://datagy.io/histogram-python/
-https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html
-https://stackoverflow.com/questions/19614400/add-title-to-collection-of-pandas-hist-plots
-https://www.includehelp.com/python/bold-text-label-in-plot.aspx
-https://www.oreilly.com/library/view/python-data-science/9781491912126/ch04.html
-https://matplotlib.org/stable/gallery/text_labels_and_annotations/titles_demo.html
-https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166
-https://www.tutorialspoint.com/increase-the-distance-between-the-title-and-the-plot-in-matplotlib
-https://seaborn.pydata.org/generated/seaborn.pairplot.html
-https://seaborn.pydata.org/generated/seaborn.set_style.html
-https://goodboychan.github.io/python/datacamp/visualization/2020/06/27/01-Customizing-Seaborn-Plots.html
-https://wellsr.com/python/seaborn-scatter-plot-with-sns-scatterplot/
-https://stackoverflow.com/questions/37734512/savefig-loop-adds-previous-plots-to-figure?fbclid=IwAR101W3aPSKbrgkL3Yu7aDcehCFMBPVBF055xb1iNDqQE-AuM0Mjn4ArKaE
-https://www.adamsmith.haus/python/answers/how-to-find-the-correlation-between-two-pandas-dataframe-columns-in-python
-https://github.com/andrewbeattycourseware/pands2022/blob/main/jupyternotebooks/Topic07%20files.ipynb
-https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.boxplot.html
-https://nickmccullum.com/python-visualization/boxplot/
-https://matplotlib.org/stable/tutorials/colors/colormaps.html
-https://seaborn.pydata.org/generated/seaborn.heatmap.html
-https://towardsdatascience.com/heatmap-basics-with-pythons-seaborn-fb92ea280a6c
-https://www.statology.org/seaborn-subplots/ 
-https://stackoverflow.com/questions/52274643/figsize-in-matplotlib-is-not-changing-the-figure-size
-https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html
-https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.transpose.html
-https://towardsdatascience.com/matplotlib-seaborn-basics-2bd7b66dbee2
-https://s3.amazonaws.com/assets.datacamp.com/production/course_6919/slides/chapter2.pdf
-https://seaborn.pydata.org/tutorial/color_palettes.html
-https://seaborn.pydata.org/generated/seaborn.countplot.html
-https://stackoverflow.com/questions/10035446/how-can-i-make-a-blank-subplot-in-matplotlib
-https://stackoverflow.com/questions/32723798/how-do-i-add-a-title-and-axis-labels-to-seaborn-heatmap
-https://stackoverflow.com/questions/14734533/how-to-access-pandas-groupby-dataframe-by-key
-https://gist.github.com/MichaelPolla/a65ac84286ab523603e64549f9850223
-https://www.w3schools.com/tags/tag_img.asp
-https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda 
-https://columbiacollege-ca.libguides.com/c.php?g=713274&p=5082934
-https://www.kaggle.com/code/rakesh6184/seaborn-plot-to-visualize-iris-data/notebook
-https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/#:~:text=Iris%20Dataset%20is%20considered%20as,flowers%20and%20recorded%20them%20digitally
-https://visme.co/blog/scatter-plot/
-https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166
-https://dsstream.com/data-exploration-definition-and-techniques/
-https://getnave.com/blog/histogram-diagram/
+*Pandas. n.d. IO Tools (Text, CSV, HDF5, …)*. [online] Available at: <https://pandas.pydata.org/docs/user_guide/io.html#io-read-csv-table>
 
+Smith, A., n.d. *How To Set Column Names When Importing A CSV Into A Pandas DataFrame In Python*. [online] Adam Smith. Available at: <https://www.adamsmith.haus/python/answers/how-to-set-column-names-when-importing-a-csv-into-a-pandas-dataframe-in-python#:~:text=Call%20pandas.,order%20they%20appear%20in%20names%20.>
 
+Ebner, J., (2021, July 13). *Pandas Describe, Explained*. [online] Sharp Sight. Available at: <https://www.sharpsightlabs.com/blog/pandas-describe/>
+
+Pandas. n.d. *Pandas.DataFrame.Describe*. [online] Available at: <https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html>
+
+Beatty, A., (2022, February 28). [online] GitHub. Available at: <https://github.com/andrewbeattycourseware/pands2022/blob/main/jupyternotebooks/Topic07%20files.ipynb>
+
+Pandas. n.d. *Pandas.DataFrame.To_String*. [online] Available at: <https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html>
+
+W3schools. n.d. *Pandas DataFrame Info() Method*. [online] Available at: <https://www.w3schools.com/python/pandas/ref_df_info.asp#:~:text=The%20info()%20method%20prints,method%20actually%20prints%20the%20info>
+
+W3resource. n.d. *Pandas DataFrame: Head() Function*. [online] Available at: <https://www.w3resource.com/pandas/dataframe/dataframe-head.php>
+
+H.G. Marchant, B., (2020, December 17). *How To Create A Histogram From A Dataframe Using Pandas In Python ?*. [online] Moonbooks. Available at: <https://moonbooks.org/Articles/How-to-create-an-histogram-from-a-dataframe-using-pandas-in-python-/>
+
+Li, J., (2015, July 23). *Save Dataframe.Hist() To A File*. [online] Stack Overflow. Available at: <https://stackoverflow.com/a/31596130>
+
+Marsja, E., (2020, February 12). *How To Plot A Histogram With Pandas In 3 Simple Steps*. [online] Erik Marsja. Available at: <https://www.marsja.se/how-to-plot-a-histogram-with-pandas-in-3-simple-steps/>
+
+Machine Learning Plus. (2021, September 13). *Pandas Histogram - Machine Learning Plus*. [online] Available at: <https://www.machinelearningplus.com/pandas/pandas-histogram/>
+
+Datagy. (2020, June 22). *Creating a Histogram With Python (Matplotlib, Pandas)*. [online] Available at: <https://datagy.io/histogram-python/>
+
+Pandas. n.d. *Pandas.DataFrame.Hist*. [online] Available at: <https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html>
+
+Wang, E., (2016, June 19). *Add Title To Collection Of Pandas Hist Plots*. [online] Stack Overflow. Available at: <https://stackoverflow.com/a/37907287>
+
+IncludeHelp. n.d. *Bold Text Label In Python Plot*. [online] Available at: <https://www.includehelp.com/python/bold-text-label-in-plot.aspx>.
+
+O’Reilly Online Learning. n.d. *Python Data Science Handbook*. [online] Available at: <https://www.oreilly.com/library/view/python-data-science/9781491912126/ch04.html>
+
+Matplotlib. n.d. *Title Positioning*. [online] Available at: <https://matplotlib.org/stable/gallery/text_labels_and_annotations/titles_demo.html>
+
+Koehrsen, W., (2018, April 6). *Visualizing Data With Pairs Plots In Python*. [online] Medium. Available at: <https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166>
+
+Kumar Rishi, R., (2021, April 9). *Increase The Distance Between The Title And The Plot In Matplotlib*. [online] Tutorialspoint. Available at: <https://www.tutorialspoint.com/increase-the-distance-between-the-title-and-the-plot-in-matplotlib>
+
+Seaborn. n.d. *Seaborn.Pairplot*. [online] Available at: <https://seaborn.pydata.org/generated/seaborn.pairplot.html>
+
+Seaborn. n.d. *Seaborn.Set_Style*. [online] Available at: <https://seaborn.pydata.org/generated/seaborn.set_style.html>
+
+Seaborn. n.d. *Seaborn.Heatmap*. [online] Available at: <https://seaborn.pydata.org/generated/seaborn.heatmap.html>
+
+Seaborn. n.d. *Seaborn.Color_Palettes*. [online] Available at: <https://seaborn.pydata.org/tutorial/color_palettes.html>
+
+Seaborn. n.d. *Seaborn.Countplot*. [online] Available at: <https://seaborn.pydata.org/generated/seaborn.countplot.html>
+
+Pandas. n.d. *Pandas.DataFrame.Boxplot*. [online] Available at: <https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.boxplot.html>
+
+Pandas. n.d. *Pandas.DataFrame.Groupby*. [online] Available at: <https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html>
+
+Pandas. n.d. *Pandas.DataFrame.Transpose*. [online] Available at: <https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.transpose.html>
+
+Jupyter, C., (2020, June 27). *Customizing Seaborn Plots*. [online] Chan's Jupyter. Available at: <https://goodboychan.github.io/python/datacamp/visualization/2020/06/27/01-Customizing-Seaborn-Plots.html>
+
+Malik, U., (2020, January 17). *Making Seaborn Scatter Plots With Sns.Scatterplot*. [online] wellsr. Available at: <https://wellsr.com/python/seaborn-scatter-plot-with-sns-scatterplot/>
+
+Matplotlib. n.d. *Choosing Colormaps in Matplotlib*. [online] Available at: <https://matplotlib.org/stable/tutorials/colors/colormaps.html>
+
+Serenity, (2016, June 9). *Savefig Loop Adds Previous Plots To Figure*. [online] Stack Overflow. Available at: <https://stackoverflow.com/a/37736370>
+
+Smith, A., n.d. *How To Find The Correlation Between Two Pandas DataFrame Columns In Python*. [online] Adam Smith. Available at: <https://www.adamsmith.haus/python/answers/how-to-find-the-correlation-between-two-pandas-dataframe-columns-in-python>
+
+Mccullum, N., n.d. *How To Create Boxplots In Python Using Matplotlib*. [online] Nick Mccullum. Available at: <https://nickmccullum.com/python-visualization/boxplot/>
+
+Carvalho, T., (2020, June 29). *Heatmap Basics With Python’s Seaborn*. [online] Medium. Available at: <https://towardsdatascience.com/heatmap-basics-with-pythons-seaborn-fb92ea280a6c>
+
+Zach, V., (2021, September 28). *How To Create Subplots In Seaborn (With Examples)*. [online] Statology. Available at: <https://www.statology.org/seaborn-subplots/>
+
+tmdavison, (2018, September 11). *Figsize In Matplotlib Is Not Changing The Figure Size?*. [online] Stack Overflow. Available at: <https://stackoverflow.com/a/52274849>
+
+Gazar, M., (2018, October 31). *Matplotlib/Seaborn Basics*. [online] Medium. Available at: <https://towardsdatascience.com/matplotlib-seaborn-basics-2bd7b66dbee2>
+
+Chris, (2012, April 5). *How Can I Make A Blank Subplot In Matplotlib?*. [online] Stack Overflow. Available at: <https://stackoverflow.com/a/10035974>
+
+areuexperienced, (2015, September 22). *How Do I Add A Title And Axis Labels To Seaborn Heatmap?*. [online] Stack Overflow. Available at: <https://stackoverflow.com/a/32724156>
+
+beardc, (2013, February 6). *How To Access Pandas Groupby Dataframe By Key*. [online] Stack Overflow. Available at: <https://stackoverflow.com/a/14734627>
+
+Polla, M., (2018, April 10). *Markdown - Resize Pictures In GitHub*. [online] Github. Available at: <https://gist.github.com/MichaelPolla/a65ac84286ab523603e64549f9850223>
+
+W3schools. n.d. *HTML Img Tag*. [online] Available at: <https://www.w3schools.com/tags/tag_img.asp>
+
+Sharma, P., (2021, April 3). *Exploratory Data Analysis: Iris Dataset*. [online] Medium. Available at: <https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda>
+
+Columbia College. n.d. *LibGuides: APA Citation Guide (7th edition)*: In-Text Citation. [online] Available at: <https://columbiacollege-ca.libguides.com/c.php?g=713274&p=5082934>
+
+Kumar, R., (2018, September 14). *Seaborn Plot To Visualize Iris Data*. [online] Kaggle. Available at: <https://www.kaggle.com/code/rakesh6184/seaborn-plot-to-visualize-iris-data/notebook>
+
+GeeksforGeeks. (2022, April 26). *Exploratory Data Analysis on Iris Dataset*. [online] Available at: <https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/#:~:text=Iris%20Dataset%20is%20considered%20as,flowers%20and%20recorded%20them%20digitally>
+
+West, C., (2020, July 10). *What Is A Scatter Plot And When To Use One*. [online] Visme. Available at: <https://visme.co/blog/scatter-plot/>
+
+Koehrsen, W., (2018, April 6). *Visualizing Data with Pairs Plots in Python*. [online] Medium. Available at: <https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166>
+
+Pomiklo, M., (2021, October 8). *What Is Data Exploration? Definition And Techniques*. [online] Data Analytics. Available at: <https://dsstream.com/data-exploration-definition-and-techniques/>
+
+Siderova, S., n.d. *Frequency Distribution: Histogram Diagrams*. [online] Nave. Available at: <https://getnave.com/blog/histogram-diagram/>
