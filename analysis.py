@@ -188,63 +188,106 @@ plt.close()
 
 # SECTION 2.3: Scatter Plot of Each Pair of Variables
 
-# It has been used the Seaborn library in order to perform this analysis. The result is saved to a png file.
-
+# Sets the parameters that define the general style of the plot, which in this case is "whitegrid" style:
 sns.set_style("whitegrid")
+
+# Sets the colours to use in the plot representation:
 sns.set_palette(["g", "m", "c"])
-scattter_plots = sns.pairplot(df, hue='class')
+
+# Creates a plot that shows the pairwise relationships between variables by calling the pairplot() function of the Seaborn library.
+# Also, it sets to distinguish each Iris species by a colour:
+sns.pairplot(df, hue='class')
+
+# Adds a title to the plot whose font size is 12 and bold. The vertical position is also set, which is 1:
 plt.suptitle('Pair Plot of Each Pair of Quantitative Variables',
              fontsize=12.0, fontweight='bold', y=1)
+
+# Saves the figure to a .png file called "scatter_plots.png":
 plt.savefig("scatter_plots.png")
+
+# Closes the current figure so that not subsequent plots are added to this figure:
 plt.close()
 
 
 # SECTION 2.4: Box Plot of Each Quantitative Variable Grouped by Iris Species
 
-# Sets seaborn plotting aesthetics as default
+# Sets the parameters that define the general style of the plot ("ticks") and the colour palette to use: 
 sns.set(style='ticks', palette='colorblind')
 
-# Defines plotting region (2 rows, 2 columns)
+# Defines plotting regions (2 rows, 2 columns) and the dimensions of the figure:
 fig, axes = plt.subplots(2, 2)
 plt.gcf().set_size_inches(20, 10)
 
-# Creates boxplot in each subplot for the four quantitative variables by class:
+# Creates a box plot for the variable sepal length grouped by class by calling the boxplot() method of the Seaborn library.
+# Also, it defines where the box plot for sepal length will be placed (top left): 
 sns.boxplot(data=df, x='class', y='sepal_length', ax=axes[0, 0])
+
+# Creates a box plot for the variable sepal width grouped by class by calling the boxplot() method of the Seaborn library.
+# Also, it defines where the box plot for sepal width will be placed (top right): 
 sns.boxplot(data=df, x='class', y='sepal_width', ax=axes[0, 1])
+
+# Creates a box plot for the variable petal length grouped by class by calling the boxplot() method of the Seaborn library.
+# Also, it defines where the box plot for petal length will be placed (bottom left): 
 sns.boxplot(data=df, x='class', y='petal_length', ax=axes[1, 0])
+
+# Creates a box plot for the variable petal width grouped by class by calling the boxplot() method of the Seaborn library.
+# Also, it defines where the box plot for petal width will be placed (bottom right):
 sns.boxplot(data=df, x='class', y='petal_width', ax=axes[1, 1])
+
+# Saves the figure to a .png file called "box_plots.png":
 plt.savefig("box_plots.png")
+
+# Closes the current figure so that not subsequent plots are added to this figure:
 plt.close()
 
 
 # SECTION 2.5: Correlation Between Variables Grouped by Iris Species
 
+# The following Python code creates a .png file that contains 3 correlation heatmaps (one per Iris species).
+# This correlation heatmaps have been created by calling the heatmap() method of the Seaborn library and the corr() method of the Pandas library.
 
+# Sets the parameters that define the general style of the plot, which in this case is "ticks" style:
 sns.set(style='ticks')
 
-#  Defines plotting region (2 rows, 2 columns)
+# Defines plotting regions (2 rows, 2 columns) and the dimensions of the figure:
 fig, axes = plt.subplots(2, 2)
 plt.gcf().set_size_inches(20, 10)
 
+# Groups the data by Iris species so that, I can retrieve from the DataFrame the data for a single specie:
 df_groupby_class = df.groupby(['class'])
 
+# Defines where the correlation heatmap for Iris virginica will be placed (top left) and sets a title to this plot:
 iris_virginica_heatmap_axes = axes[0, 0]
 iris_virginica_heatmap_axes.set(title="Correlation Heatmap for Iris Virginica")
 
+# Defines where the correlation heatmap for Iris Setosa will be placed (top right) and sets a title to this plot:
 iris_setosa_heatmap_axes = axes[0, 1]
 iris_setosa_heatmap_axes.set(title="Correlation Heatmap for Iris Setosa")
 
+# Defines where the correlation heatmap for Iris Versicolor will be placed (bottom left) and sets a title to this plot:
 iris_versicolor_heatmap_axes = axes[1, 0]
-iris_versicolor_heatmap_axes.set(
-    title="Correlation Heatmap for Iris Versicolor")
+iris_versicolor_heatmap_axes.set(title="Correlation Heatmap for Iris Versicolor")
 
+# Creates a correlation heatmap for Iris Virginica species and adjusts the colourmap to the interval [-1, 1] as the correlation doesn't go beyond those limits.
+# Also, it customizes the line that divides every cell to white and to a width of 1. The colourmap is set to the"GnBu" palette:
 sns.heatmap(df_groupby_class.get_group('Iris-virginica').corr(), vmin=-1, vmax=1, annot=True,
             linecolor='white', linewidth=1, cmap='GnBu', ax=iris_virginica_heatmap_axes)
+
+# Creates a correlation heatmap for Iris Setosa species and adjusts the colourmap to the interval [-1, 1] as the correlation doesn't go beyond those limits.
+# Also, it customizes the line that divides every cell to white and to a width of 1. The colourmap is set to the"GnBu" palette:
 sns.heatmap(df_groupby_class.get_group('Iris-setosa').corr(), vmin=-1, vmax=1, annot=True,
             linecolor='white', linewidth=1, cmap='GnBu', ax=iris_setosa_heatmap_axes)
+
+# Creates a correlation heatmap for Iris Versicolor species and adjusts the colourmap to the interval [-1, 1] as the correlation doesn't go beyond those limits.
+# Also, it customizes the line that divides every cell to white and to a width of 1. The colourmap is set to the"GnBu" palette:
 sns.heatmap(df_groupby_class.get_group('Iris-versicolor').corr(), vmin=-1, vmax=1, annot=True,
             linecolor='white', linewidth=1, cmap='GnBu', ax=iris_versicolor_heatmap_axes)
+
+# Hides the bottom right region since it is not used: 
 axes[1, 1].axis('off')
 
+# Saves the figure to a .png file called "heatmap_by_class.png":
 plt.savefig("heatmap_by_class.png")
+
+# Closes the current figure:
 plt.close()
